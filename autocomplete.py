@@ -85,8 +85,12 @@ class Trie():
         #First search if the input fits the Trie
         for letter in list(input):
             if not node.children.get(letter):
-                found = False
-                break
+                
+                #Switch case (lower to upper or upper to lower) and try again
+                letter = letter.swapcase()
+                if not node.children.get(letter):
+                    found = False
+                    break
 
             name += letter
 
