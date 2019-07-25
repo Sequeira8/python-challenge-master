@@ -48,10 +48,10 @@ class Trie():
 
     def insertNames(self, names):
         #Uses function "insert" to insert a list of names
-        #The list is sorted
+        #The list is sorted and the names are lower case
 
         for name in sorted(names, key=str.lower):
-            self.insert(name)
+            self.insert(name.lower())
 
 
 
@@ -87,15 +87,11 @@ class Trie():
         #String with the name that will be added to the names_list
         name = ''
 
-        #First search if the input fits the Trie
-        for letter in list(input):
+        #First search if the input fits the Trie (always looks for lower case)
+        for letter in list(input.lower()):
             if not node.children.get(letter):
-
-                #Switch case (lower to upper or upper to lower) and try again
-                letter = letter.swapcase()
-                if not node.children.get(letter):
-                    found = False
-                    break
+                found = False
+                break
 
             name += letter
 
