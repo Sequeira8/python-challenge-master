@@ -48,14 +48,19 @@ class Trie():
 
     def insertNames(self, names):
         #Uses function "insert" to insert a list of names
+        #The list is sorted
 
-        for name in names:
+        for name in sorted(names, key=str.lower):
             self.insert(name)
 
 
 
     def searchRec(self, node, name):
         #Appends the possibilities to the names_list
+
+        #Gives just a list of 8 name sugestions to the user
+        if len(self.names_list) == 8:
+            return
 
         #If it is the last char possible add the name to the list
         if node.last:
@@ -85,7 +90,7 @@ class Trie():
         #First search if the input fits the Trie
         for letter in list(input):
             if not node.children.get(letter):
-                
+
                 #Switch case (lower to upper or upper to lower) and try again
                 letter = letter.swapcase()
                 if not node.children.get(letter):
