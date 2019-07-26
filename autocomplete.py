@@ -1,10 +1,20 @@
-# Implementing auto-complete using Trie data structure
+'''
+Implementing auto-complete feature using Trie data structure
+
+The system is able to store sentences in a Trie structure where each char
+represents a Node of the structure.
+
+Also for a given input the system is able to give up to 8 suggestions
+that complete the given input with the objective to help the user
+This number can be higher or lower if we change its value in
+the searchRec function.
+'''
 
 class TrieNode():
+    '''Node for the Trie data Structure that
+    represents a letter of one name'''
 
     def __init__(self):
-        #Initialize one Node for the Trie data Structure
-        #that will represent a letter of the name
 
         #Dictionary containing all the the next possible letters
         self.children = {}
@@ -14,9 +24,9 @@ class TrieNode():
 
 
 class Trie():
+    '''Trie data structure that will store all the names of the apps'''
 
     def __init__(self):
-        #Initialize one Trie that will store all the names
 
         self.root = TrieNode()
 
@@ -27,7 +37,7 @@ class Trie():
 
 
     def insert(self, name):
-        #Inserts one word into the structure
+        '''Inserts one word into the structure'''
 
         node = self.root
 
@@ -47,8 +57,8 @@ class Trie():
 
 
     def insertNames(self, names):
-        #Uses function "insert" to insert a list of names
-        #The list is sorted and the names are lower case
+        '''Uses function "insert" to insert a list of names into the structure
+        The list is sorted and the names are lower case'''
 
         for name in sorted(names, key=str.lower):
             self.insert(name.lower())
@@ -56,7 +66,7 @@ class Trie():
 
 
     def searchRec(self, node, name):
-        #Appends the possibilities to the names_list
+        '''Appends the possibilities to the names_list'''
 
         #Gives just a list of 8 name sugestions to the user
         if len(self.names_list) == 8:
@@ -73,7 +83,7 @@ class Trie():
 
 
     def search(self, input):
-        #Returns all the names in the trie that start with the given input
+        '''Returns all the names in the trie that start with the given input'''
 
         #Reset the list with the possible names
         self.names_list = []
@@ -112,3 +122,5 @@ class Trie():
         self.searchRec(node, name)
 
         return self.names_list
+
+print(__doc__)

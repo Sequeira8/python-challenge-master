@@ -1,3 +1,8 @@
+'''
+API that receives a query and returns the possible results for that query
+using the autocomplete system defined in the autocomplete.py file
+'''
+
 from flask import Flask, request, jsonify, render_template
 from wtforms import TextField, Form
 import autocomplete
@@ -7,18 +12,23 @@ import sys
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
-#Create a Trie With the Given input
+#Create a Trie data Structure
 t = autocomplete.Trie()
 
-#Form for the user Input
+
 class SearchForm(Form):
+    '''Form for the user Input'''
+
     input = TextField('Name:')
 
 
 @app.route('/', methods=['GET', 'POST'])
 def mainPage():
+    '''Gets the names in the input file and stores them in the autocomplete Trie
+    Also creates a form that will be used in the rendered html file and where
+    the user can write his input'''
 
-    #List where the names in the input file will be stores
+    #List where the names in the input file will be stored
     titles = []
 
     #Open the input file and stores all the names in the titles list
@@ -40,7 +50,8 @@ def mainPage():
 
 @app.route('/_possibilities', methods=['POST'])
 def _possibilities():
-    #Receive input, searches for the possible names and returns a list of them
+    '''Receive input, searches for the possible names in the Trie
+    and returns a list of them'''
 
     #Gets the User Input
     input = request.form.get('input')
@@ -52,10 +63,10 @@ def _possibilities():
     return jsonify({'data': render_template("namepossibilities.html", list=list)})
 
 
-#Error page in case the user tries to acess an undefined path
 @app.errorhandler(404)
 def page_not_found(e):
-    return "<h1>404</h1><p>The resource could not be found.</p>", 404
+    '''Error page in case the user tries to acess an undefined path'''
 
+    return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
 app.run()
