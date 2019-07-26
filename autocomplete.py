@@ -122,5 +122,3 @@ class Trie():
         self.searchRec(node, name)
 
         return self.names_list
-
-print(__doc__)
