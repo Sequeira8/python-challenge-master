@@ -23,7 +23,7 @@ The system is composed of:
 
 ## Execution
 
-Make sure to download the project into your computer
+Make sure to download the project into your computer.
 The system only shows a maximum of 8 suggestions to the user, you can change this number on the autocomplete.py file line 72.
 
 
