@@ -30,8 +30,14 @@ def mainPage():
     #List where the names in the input file will be stored
     titles = []
 
+    if len(sys.argv) < 2 or len(sys.argv) > 2:
+        inputfile = 'test_files/6500titles.csv'
+
+    else:
+        inputfile = sys.argv[1]
+
     #Open the input file and stores all the names in the titles list
-    with open(sys.argv[1], newline='\n') as file:
+    with open(inputfile, newline='\n') as file:
         data = csv.reader(file)
         for row in data:
             titles.append(row[0])
