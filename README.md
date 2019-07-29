@@ -36,26 +36,26 @@ The system only shows a maximum of 8 suggestions to the user, you can change thi
 
 ## Test System with Docker-Compose
 
-* Open python-challenge-master folder
-* Right click on the folder and open git bash if you have it OR copy the path of the folder, open windows cmd and run " cd *path* "
-* Run docker-compose up --build and wait until a message saying "Running on ..." appears in the terminal
-* Open your browser and type: "localhost:8080"
+* Open **python-challenge-master** folder
+* Right click on the folder and open **git bash** if you have it OR copy the path of the folder, open **windows cmd** and run **cd *path***
+* Run **docker-compose up --build** and wait until a message saying "Running on ..." appears in the terminal
+* Open your browser and type: **localhost:8080**
 * Test the app by inserting any names you want
 
-Note: The names used are the ones in the "main/test_files/6500.csv" file
+Note: The names used are the ones in the **main/test_files/6500.csv** file
 
 
 ## Test System without Docker-Compose
 
-* Open python-challenge-master/main folder
-* Open git bash or cmd in the current path
-* Run " python api.py *inputfile* " and switch *inputfile* with any csv file you would like. In case you don't type any inputfile the test_files/6500.csv its used by default. Wait until a message saying "Running on ..." appears in the terminal
-* Open your browser and type: "localhost:8080"
+* Open **python-challenge-master/main** folder
+* Open **git bash** OR **cmd** in the current path
+* Run  **python api.py *inputfile*** and switch *inputfile* with any csv file you would like. In case you don't type any inputfile the *test_files/6500.csv* its used by default. Wait until a message saying "Running on ..." appears in the terminal
+* Open your browser and type: **localhost:8080**
 * Test the app by inserting any names you want
 
 
 ## Run test.py files
 
-* Open python-challenge-master/main folder
-* Open git bash or cmd in the current path
-* Run " python -m unittest discover tests
+* Open **python-challenge-master/main** folder
+* Open **git bash** or **cmd** in the current path
+* Run **python -m unittest discover tests**
