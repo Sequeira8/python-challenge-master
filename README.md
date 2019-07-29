@@ -49,7 +49,7 @@ Note: The names used are the ones in the **main/test_files/6500.csv** file
 
 * Open **python-challenge-master/main** folder
 * Open **git bash** OR **cmd** in the current path
-* Run  **python api.py *inputfile*** and switch *inputfile* with any csv file you would like. In case you don't type any inputfile the *test_files/6500.csv* its used by default. Wait until a message saying "Running on ..." appears in the terminal
+* Run  **python api.py *inputfile*** and switch *inputfile* with any csv file you would like. In case you don't type any inputfile the *test_files/6500.csv* is used by default. Wait until a message saying "Running on ..." appears in the terminal
 * Open your browser and type: **localhost:8080**
 * Test the app by inserting any names you want
 
