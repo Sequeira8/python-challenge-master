@@ -21,20 +21,20 @@ The system is composed of:
 * Docker files for the virtual machine environment
 
 
-## Execution
+# Execution
 
 Make sure to download the project into your computer.
 The system only shows a maximum of 8 suggestions to the user, you can change this number on the autocomplete.py file line 72.
 
 
-# Requirements
+### Requirements
 
 * Install "Docker Desktop"
 * Install Python 3.7.4
 * Install pip 19.2.1
 
 
-# Test System with Docker-Compose
+## Test System with Docker-Compose
 
 * Open python-challenge-master folder
 * Right click on the folder and open git bash if you have it OR copy the path of the folder, open windows cmd and run " cd *path* "
@@ -45,7 +45,7 @@ The system only shows a maximum of 8 suggestions to the user, you can change thi
 Note: The names used are the ones in the "main/test_files/6500.csv" file
 
 
-# Test System without Docker-Compose
+## Test System without Docker-Compose
 
 * Open python-challenge-master/main folder
 * Open git bash or cmd in the current path
@@ -54,7 +54,7 @@ Note: The names used are the ones in the "main/test_files/6500.csv" file
 * Test the app by inserting any names you want
 
 
-# Run test.py files
+## Run test.py files
 
 * Open python-challenge-master/main folder
 * Open git bash or cmd in the current path
